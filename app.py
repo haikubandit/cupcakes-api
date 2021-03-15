@@ -17,6 +17,12 @@ debug = DebugToolbarExtension(app)
 connect_db(app)
 
 
+@app.route('/')
+def root():
+    """Show list of cupcakes and form to add new ones"""
+    return render_template('base.html')
+
+
 @app.route('/api/cupcakes')
 def list_cupcakes():
     """Returns JSON w/ all cupcakes"""
